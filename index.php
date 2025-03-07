@@ -1,12 +1,22 @@
 <?php
 
-$indexFolder = dirname(__FILE__);
+require_once __DIR__."/Components/UniversalForm/UniversalForm.php";
+require_once __DIR__."/Components/UniversalForm/IUniversalFormPreset.php";
+require_once __DIR__."/Components/UniversalForm/Presets/LoginFormPreset.php";
+require_once __DIR__."/Components/UniversalForm/Presets/ForgotPasswordFormPreset.php";
+require_once __DIR__."/Components/UniversalForm/Presets/SignUpFormPreset.php";
 
-require_once "$indexFolder/Components/login-form/LoginForm.php";
+use Components\UniversalForm;
+use Components\Presets\LoginFormPreset;
+use Components\Presets\SignUpFormPreset;
+use Components\Presets\ForgotPasswordFormPreset;
 
-use Components\LoginForm;
-
-$loginForm = new LoginForm("Combats логин");
+$loginFormPreset = new LoginFormPreset();
+$signUpFormPreset = new SignUpFormPreset();
+$forgotFormPreset = new ForgotPasswordFormPreset();
+$loginForm = new UniversalForm($loginFormPreset);
+$signUpForm = new UniversalForm($signUpFormPreset);
+$forgotForm = new UniversalForm($forgotFormPreset);
 
 ?>
 <html lang="En-En">
@@ -14,20 +24,26 @@ $loginForm = new LoginForm("Combats логин");
         <meta charset="UTF-8" >
         <title>Combats</title>
         <link rel="icon" href="Images/icon.svg">
+        <link rel="stylesheet" href="CSS/index.css">
         <?php
             /*require '';
             require_once '';
             include '';
             include_once '';*/
             //include './Components/login-form/index_head.inc';
-            $loginForm->EchoHeader();
+            $loginForm->EchoCss();
         ?>
     </head>
     <body>
-        <!--<h1>Hello user!!!</h1>-->
-        <?php //phpinfo()
+        <div class="form-container flex-ltr form-change-animation">
+            <?php //phpinfo()
             //include './Components/login-form/index_body.inc';
+            $signUpForm->EchoBody();
             $loginForm->EchoBody();
-        ?>
-    </body>
+            $forgotForm->EchoBody();
+
+            $loginForm->EchoScripts();
+            ?>
+        </div>
+     </body>
 </html>

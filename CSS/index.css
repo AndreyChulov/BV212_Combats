@@ -1,0 +1,23 @@
+body{
+    overflow: hidden;
+}
+
+.form-container{
+
+}
+
+.form-container > div{
+    width: 95vw;
+    height: 95vh;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.flex-ltr{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}

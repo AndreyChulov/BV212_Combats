@@ -1,0 +1,18 @@
+.form-change-animation{
+    transition-delay: unset;
+    transition-duration: 1.5s;
+    transition-property: transform;
+    transition-timing-function: linear;
+}
+
+.form-signUp{
+    transform: translate(100vw);
+}
+
+.form-login{
+    transform: translate(0);
+}
+
+.form-forget{
+    transform: translate(-100vw);
+}
