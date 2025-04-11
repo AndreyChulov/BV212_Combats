@@ -14,7 +14,7 @@ class LoginFormPreset implements IUniversalFormPreset
     private const string _SIGN_IN_BUTTON_TEXT = "";
     private const string _FORGOT_PASSWORD_LINK_TEXT = "Забыл пароль? Восстановим?";
     private const string _SIGN_UP_LINK_TEXT = "Нет аккаунта? Зарегистрируйся!";
-    private const string _PROCEED_LINK = "auth.php";
+    private const string _PROCEED_LINK = "/API/login.php";
 
     public function getLogoTitle(): string
     {
