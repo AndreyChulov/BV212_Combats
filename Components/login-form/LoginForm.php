@@ -60,7 +60,7 @@ class LoginForm
 
     public function EchoHeader() : void {
         $styleResetLink = "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css";
-        $styleLink = realpath("$this->_ROOT_URL/CSS/form.css");
+        $styleLink = "$this->_ROOT_URL/CSS/form.css";
 
         echo '<link rel="stylesheet" href="' . $styleResetLink . '">';
         echo '<link rel="stylesheet" href="' . $styleLink . '">';

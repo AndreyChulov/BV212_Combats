@@ -111,8 +111,8 @@ readonly class UniversalForm
 
     public function EchoCss() : void {
         $styleResetLink = "https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css";
-        $styleLink = realpath("$this->_ROOT_URL/CSS/universal_form.css");
-        $animationStyleLink = realpath("$this->_ROOT_URL/CSS/form_animation.css");
+        $styleLink = "$this->_ROOT_URL/CSS/universal_form.css";
+        $animationStyleLink = "$this->_ROOT_URL/CSS/form_animation.css";
 
         echo <<<HTML
             <link rel="stylesheet" href="$styleResetLink">
@@ -122,8 +122,8 @@ readonly class UniversalForm
     }
 
     public function EchoScripts() : void {
-        $animationJSLink = realpath("{$this->_ROOT_URL}JS/form_animation.js");
-        $jQueryLink = realpath("{$this->_ROOT_URL}Components/JQuery/jquery-3.7.1.js");
+        $animationJSLink = "{$this->_ROOT_URL}JS/form_animation.js";
+        $jQueryLink = "{$this->_ROOT_URL}Components/JQuery/jquery-3.7.1.js";
 
         echo <<<HTML
             <script src="$jQueryLink"></script>`
