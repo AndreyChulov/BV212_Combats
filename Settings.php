@@ -3,5 +3,5 @@
 global $ROOT_URL;
 global $SESSION_TIMEOUT;
 
-$ROOT_URL = "http://localhost:80/";
+$ROOT_URL = "https://bv212--combats-ezop.amvera.io:80/";
 $SESSION_TIMEOUT = 2*60;//2 minutes
