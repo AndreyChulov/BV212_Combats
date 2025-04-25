@@ -122,8 +122,8 @@ readonly class UniversalForm
     }
 
     public function EchoScripts() : void {
-        $animationJSLink = "{$this->_ROOT_URL}JS/form_animation.js";
-        $jQueryLink = "{$this->_ROOT_URL}Components/JQuery/jquery-3.7.1.js";
+        $animationJSLink = "$this->_ROOT_URL/JS/form_animation.js";
+        $jQueryLink = "$this->_ROOT_URL/Components/JQuery/jquery-3.7.1.js";
 
         echo <<<HTML
             <script src="$jQueryLink"></script>`
