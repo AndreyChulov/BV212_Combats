@@ -41,7 +41,7 @@ if ($userCredentials->Password == $universalFormData->Password) {
     $loginApiData->UserName = $universalFormData->UserName;
     $loginApiData->Message = "Аутентификация успешна";
     $authorization->SetAuthorized($userCredentials->Id);
-    session_commit();
+    //session_commit();
     header("Location:/lobby.php", true, 302);
     exit();
 } else {

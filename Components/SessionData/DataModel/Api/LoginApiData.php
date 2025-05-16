@@ -6,7 +6,7 @@ class LoginApiData
 {
     private const string SESSION_PARAMETER = "LoginApiData";
 
-    public readonly bool $IsApiDataExists;
+    public bool $IsApiDataExists;
 
     private bool | null $_isLoginSuccess;
     private string | null $_userName;
@@ -60,5 +60,12 @@ class LoginApiData
             'message' => $this->_message
         ];
         $_SESSION[self::SESSION_PARAMETER] = $data;
+    }
+
+    public function ClearData() : void
+    {
+        unset($_SESSION[self::SESSION_PARAMETER]);
+        $this->__construct(self::SESSION_PARAMETER);
+        $this->UpdateSessionData();
     }
 }

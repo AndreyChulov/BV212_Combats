@@ -6,8 +6,8 @@ require_once __DIR__ . '/../../Settings.php';
 
 abstract class BaseSessionData
 {
-    private readonly string $_sessionParameterName;
-    private readonly int $_session_timeout;
+    private string $_sessionParameterName;
+    private int $_session_timeout;
 
     private mixed $data;
     private int $timestamp;
@@ -21,6 +21,7 @@ abstract class BaseSessionData
 
         $this->_sessionParameterName = $_sessionParameterName;
         $this->_session_timeout = $SESSION_TIMEOUT;
+
         //$this->IsDataExists = isset($_SESSION[$_sessionParameterName]);
 
         if ($this->IsDataExists) {
@@ -55,5 +56,6 @@ abstract class BaseSessionData
     {
         unset($_SESSION[$this->_sessionParameterName]);
         $this->__construct($this->_sessionParameterName);
+        $this->UpdateData();
     }
 }

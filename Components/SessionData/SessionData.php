@@ -12,15 +12,23 @@ use Components\SessionData\DataModel\AuthorizationData;
 
 class SessionData
 {
+    private static function ShowSessionData()
+    {
+        //print_r($_SESSION);
+    }
+
     public static function GetLoginApiData() : LoginApiData{
+        self::ShowSessionData();
         return new LoginApiData();
     }
 
     public static function GetIndexPageData() : IndexPageData{
+        self::ShowSessionData();
         return new IndexPageData();
     }
 
     public static function GetAuthorizationData() : AuthorizationData{
+        self::ShowSessionData();
         return new AuthorizationData();
     }
 }
